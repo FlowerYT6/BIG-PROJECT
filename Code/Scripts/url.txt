@@ -1,0 +1,7 @@
+<a href='http://www.example.com/'><button>..</button></a> | Button
+<br>..<br> | Bold Text
+<title>..<title> | HTML Tab Title
+.. | Text
+<input type="submit" onclick="return confirm('Are you sure?')" />
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+                body {
+            background-image: linear-gradient(to right, gold, yellow, blue);
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            font-size: 24px;
+            text-align: right;
+        }
+        input[type="button"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<link rel="stylesheet" href="styles1.css" />
+<body>
+    
+    <div class="header">
+        <h1 class="title">Simple Calculator</h1>
+        <a href="index.html" target="_blank">
+            <button>HOME</button>
+        </a>
+    </div>
+    
+    <h2 class="subheading">Inspired by <a href="https://www.w3schools.com/" target="_blank">w3schools</a></h2>
+    
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="result"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="dis('1')"></td>
+            <td><input type="button" value="2" onclick="dis('2')"></td>
+            <td><input type="button" value="3" onclick="dis('3')"></td>
+            <td><input type="button" value="+" onclick="dis('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')"></td>
+            <td><input type="button" value="5" onclick="dis('5')"></td>
+            <td><input type="button" value="6" onclick="dis('6')"></td>
+            <td><input type="button" value="-" onclick="dis('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')"></td>
+            <td><input type="button" value="8" onclick="dis('8')"></td>
+            <td><input type="button" value="9" onclick="dis('9')"></td>
+            <td><input type="button" value="/" onclick="dis('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="dis('0')"></td>
+            <td><input type="button" value="." onclick="dis('.')"></td>
+            <td><input type="button" value="C" onclick="clr()"></td>
+            <td><input type="button" value="=" onclick="solve()"></td>
+        </tr>
+        <tr>
+            <!-- Special buttons -->
+            <td><input type="button" value="sqrt" onclick="dis('Math.sqrt(')"></td>
+            <td><input type="button" value="^" onclick="dis('**')"></td>
+            <td><input type="button" value="1/x" onclick="dis('1/')"></td>
+            <td><input type="button" value="%" onclick="dis('%')"></td>
+        </tr>
+        <tr>
+            <!-- Infinity button -->
+            <td><input type="button" value="∞" onclick="dis('Infinity')"></td>
+            <td><input type="button" value="-∞" onclick="dis('-Infinity')"></td>
+            <td><input type="button" value="π" onclick="dis('Math.PI')"></td> <!-- Added π for convenience -->
+            <td><input type="button" value="e" onclick="dis('Math.E')"></td> <!-- Added e for convenience -->
+        </tr>
+    </table>
+
+    <script>
+        function dis(val) {
+            document.getElementById("result").value += val;
+        }
+
+        function solve() {
+            let x = document.getElementById("result").value;
+            try {
+                let y = eval(x); // Use eval to evaluate simple expressions
+                document.getElementById("result").value = y;
+            } catch (error) {
+                document.getElementById("result").value = "Aw, Snap!";
+            }
+        }
+
+        function clr() {
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
+

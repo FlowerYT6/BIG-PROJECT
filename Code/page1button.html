@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- My Heading -->
+    <h1 id="MyHeading">Flower</h1>
+    <!-- My Button -->
+    <button id="MyButton">HELP</button>
+    <a href="page1button.html"
+    button>CLOSE HELP</a>
+    <a href="index.html"
+    p>page1</a>
+    <a href='index.html'><button>Home</button></a>
+
+</body>
+
+</html>
+
+<script>
+    //Select button by id
+    const MyButton = document.getElementById('MyButton');
+    //Add on click listener for button
+    MyButton.addEventListener('click', function() {
+        //Select (h1) heading by id, and then change it's value to (bananas)
+        document.getElementById('MyHeading').innerText = "Text page1 is Homepage"
+    })
+</script>
